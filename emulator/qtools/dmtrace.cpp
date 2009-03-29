@@ -1,5 +1,6 @@
 // Copyright 2006 The Android Open Source Project
 
+#include <unistd.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include <inttypes.h>
