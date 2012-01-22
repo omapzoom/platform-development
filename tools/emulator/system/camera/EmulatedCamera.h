@@ -350,7 +350,11 @@ private:
 
     static int cancel_auto_focus(struct camera_device* dev);
 
+#ifdef OMAP_ENHANCEMENT
+    static int take_picture(struct camera_device* dev, const char* params);
+#else
     static int take_picture(struct camera_device* dev);
+#endif
 
     static int cancel_picture(struct camera_device* dev);
 
