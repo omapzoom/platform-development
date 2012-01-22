@@ -806,7 +806,11 @@ int EmulatedCamera::cancel_auto_focus(struct camera_device* dev)
     return ec->cancelAutoFocus();
 }
 
+#ifdef OMAP_ENHANCEMENT
+int EmulatedCamera::take_picture(struct camera_device* dev, const char* params)
+#else
 int EmulatedCamera::take_picture(struct camera_device* dev)
+#endif
 {
     EmulatedCamera* ec = reinterpret_cast<EmulatedCamera*>(dev->priv);
     if (ec == NULL) {
