@@ -316,6 +316,11 @@ private:
     static int set_preview_window(struct camera_device* dev,
                                    struct preview_stream_ops* window);
 
+#ifdef OMAP_ENHANCEMENT
+    static int set_buffer_source(struct camera_device* dev,
+                                 struct preview_stream_ops*, struct preview_stream_ops*);
+#endif
+
     static void set_callbacks(struct camera_device* dev,
                               camera_notify_callback notify_cb,
                               camera_data_callback data_cb,
