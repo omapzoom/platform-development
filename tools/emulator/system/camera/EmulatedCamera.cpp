@@ -658,6 +658,16 @@ int EmulatedCamera::set_preview_window(struct camera_device* dev,
     return ec->setPreviewWindow(window);
 }
 
+#ifdef OMAP_ENHANCEMENT
+int EmulatedCamera::set_buffer_source(struct camera_device* dev,
+                                       struct preview_stream_ops* tapin,
+                                       struct preview_stream_ops* tapout)
+{
+    // not implemented
+    return NO_ERROR;
+}
+#endif
+
 void EmulatedCamera::set_callbacks(
         struct camera_device* dev,
         camera_notify_callback notify_cb,
@@ -932,6 +942,10 @@ camera_device_ops_t EmulatedCamera::mDeviceOps = {
     EmulatedCamera::send_command,
     EmulatedCamera::release,
     EmulatedCamera::dump
+#ifdef OMAP_ENHANCEMENT
+    ,
+    EmulatedCamera::set_buffer_source
+#endif
 };
 
 /****************************************************************************
