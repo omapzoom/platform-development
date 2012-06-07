@@ -658,7 +658,7 @@ int EmulatedCamera::set_preview_window(struct camera_device* dev,
     return ec->setPreviewWindow(window);
 }
 
-#ifdef OMAP_ENHANCEMENT
+#ifdef OMAP_ENHANCEMENT_CPCAM
 int EmulatedCamera::set_buffer_source(struct camera_device* dev,
                                        struct preview_stream_ops* tapin,
                                        struct preview_stream_ops* tapout)
@@ -816,7 +816,7 @@ int EmulatedCamera::cancel_auto_focus(struct camera_device* dev)
     return ec->cancelAutoFocus();
 }
 
-#ifdef OMAP_ENHANCEMENT
+#ifdef OMAP_ENHANCEMENT_CPCAM
 int EmulatedCamera::take_picture(struct camera_device* dev, const char* params)
 #else
 int EmulatedCamera::take_picture(struct camera_device* dev)
@@ -942,7 +942,7 @@ camera_device_ops_t EmulatedCamera::mDeviceOps = {
     EmulatedCamera::send_command,
     EmulatedCamera::release,
     EmulatedCamera::dump
-#ifdef OMAP_ENHANCEMENT
+#ifdef OMAP_ENHANCEMENT_CPCAM
     ,
     EmulatedCamera::set_buffer_source
 #endif

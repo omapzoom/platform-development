@@ -316,7 +316,7 @@ private:
     static int set_preview_window(struct camera_device* dev,
                                    struct preview_stream_ops* window);
 
-#ifdef OMAP_ENHANCEMENT
+#ifdef OMAP_ENHANCEMENT_CPCAM
     static int set_buffer_source(struct camera_device* dev,
                                  struct preview_stream_ops*, struct preview_stream_ops*);
 #endif
@@ -355,7 +355,7 @@ private:
 
     static int cancel_auto_focus(struct camera_device* dev);
 
-#ifdef OMAP_ENHANCEMENT
+#ifdef OMAP_ENHANCEMENT_CPCAM
     static int take_picture(struct camera_device* dev, const char* params);
 #else
     static int take_picture(struct camera_device* dev);
